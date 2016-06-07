@@ -34,7 +34,7 @@ class CRM
       when 3 then delete_contact
       when 4 then display_all_contacts
       when 5 then search_by_attribute
-      when 6 then exit
+      when 6 then exit_program
     end
   end
 
@@ -44,7 +44,7 @@ class CRM
     first_name = gets.chomp
 
     print 'Enter last name:'
-    last_name = gets.chomo
+    last_name = gets.chomp
 
     print 'Enter email address:'
     email = gets.chomp
@@ -78,7 +78,7 @@ class CRM
   def delete_contact
 
     puts 'What is the ID# of the contact you would like to delete?'
-    id = gets.chomp
+    id = gets.chomp.to_i
 
     contact_to_delete = Contact.find(id)
     contact_to_delete.delete
@@ -116,4 +116,10 @@ display_contacts(Contact.find_by(attribute, value))
 
   # Add other methods here, if you need them.
 
+  def exit_program
+    exit
+  end
+
 end
+
+n = CRM.new
