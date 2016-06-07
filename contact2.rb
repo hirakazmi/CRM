@@ -45,18 +45,17 @@ class Contact
   end
 
   def self.find_by(attribute, value)
-
     found_contact = []
 
     case attribute
     when FIRSTNAME then
-      @@contacts.select { |i| i.first_name == value }
+      found_contact = @@contacts.select { |i| i.first_name == value }
     when LASTNAME then
-      @@contacts.select { |i| i.last_name == value }
+      found_contact = @@contacts.select { |i| i.last_name == value }
     when EMAIL then
-      @@contacts.select  { |i| i.email == value }
+      found_contact = @@contacts.select  { |i| i.email == value }
     when NOTE then
-      @@contacts.select { |i| i.note == value }
+      found_contact = @@contacts.select { |i| i.note == value }
     end
 
     return found_contact[0]

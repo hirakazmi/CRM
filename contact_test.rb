@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative '../contact'
+require_relative 'contact2'
+
 
 class TestContact < Minitest::Test
 
